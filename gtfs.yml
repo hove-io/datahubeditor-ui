@@ -1,43 +1,43 @@
 ---
 - id: feedinfo
   name: feed_info.txt
-  helpContent: The file contains information about the feed itself, rather than the services that the feed describes. GTFS currently has an agency.txt file to provide information about the agencies that operate the services described by the feed. However, the publisher of the feed is sometimes a different entity than any of the agencies (in the case of regional aggregators). In addition, there are some fields that are really feed-wide settings, rather than agency-wide.
+  helpContent: Le fichier contient des informations à propos du flux (plutôt que son contenu). Le publieur du flux pouvant être différent de l'opérateur qui le met en service, ce fichier permet de préciser des informations à plius grande échelle qu'au niveau de l'opérateur seulement.
   fields:
   - name: "feed_id"
     required: false
     inputType: TEXT
     columnWidth: 12
-    helpContent: "The feed_id field contains the feed_id which should uniquely identify the GTFS feed within trip planning applications and ideally be universally unique among public transit operators."
+    helpContent: "Permet d'identifier le GTFS dans les applications de planification de déplacement et est idéalement universellement unique parmi tous les opérateurs de transport public."
   - name: "feed_publisher_name"
     required: true
     inputType: TEXT
     columnWidth: 12
-    helpContent: "The feed_publisher_name field contains the full name of the organization that publishes the feed. (This may be the same as one of the agency_name values in agency.txt.) GTFS-consuming applications can display this name when giving attribution for a particular feed's data."
+    helpContent: "Contient le nom complet de l'organisation qui publie le flux."
   - name: "feed_publisher_url"
     required: true
     inputType: URL
     columnWidth: 12
-    helpContent: "The feed_publisher_url field contains the URL of the feed publishing organization's website. (This may be the same as one of the agency_url values in agency.txt.) The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values."
+    helpContent: "Contient l'URL du flux chez l'organisation qui le publie."
   - name: "feed_lang"
     required: true
     inputType: LANGUAGE
     columnWidth: 12
-    helpContent: "The feed_lang field contains a IETF BCP 47 language code specifying the default language used for the text in this feed. This setting helps GTFS consumers choose capitalization rules and other language-specific settings for the feed. For an introduction to IETF BCP 47, please refer to http://www.rfc-editor.org/rfc/bcp/bcp47.txt and http://www.w3.org/International/articles/language-tags/."
+    helpContent: "Contient le code IETF BCP 47 de la langue utilisée dans le flux."
   - name: "default_lang"
     required: false
     inputType: LANGUAGE
     columnWidth: 12
-    helpContent: "Defines the language used when the data consumer doesn’t know the language of the rider. It's often defined as en, English."
+    helpContent: "Définit le langage par défaut quand le publieur ne connaît pas la langue de l'usager. Souvent en, English."
   - name: "feed_start_date"
     required: false
     inputType: DATE
     columnWidth: 12
-    helpContent: "The feed provides complete and reliable schedule information for service in the period from the beginning of the feed_start_date day to the end of the feed_end_date day. Both days are given as dates in YYYYMMDD format as for calendar.txt, or left empty if unavailable. The feed_end_date date must not precede the feed_start_date date if both are given. Feed providers are encouraged to give schedule data outside this period to advise of likely future service, but feed consumers should treat it mindful of its non-authoritative status. If feed_start_date or feed_end_date extend beyond the active calendar dates defined in calendar.txt and calendar_dates.txt, the feed is making an explicit assertion that there is no service for dates within the feed_start_date or feed_end_date range but not included in the active calendar dates."
+    helpContent: "Date de début de validité du flux"
   - name: "feed_end_date"
     required: false
     inputType: DATE
     columnWidth: 12
-    helpContent: "The feed provides complete and reliable schedule information for service in the period from the beginning of the feed_start_date day to the end of the feed_end_date day. Both days are given as dates in YYYYMMDD format as for calendar.txt, or left empty if unavailable. The feed_end_date date must not precede the feed_start_date date if both are given. Feed providers are encouraged to give schedule data outside this period to advise of likely future service, but feed consumers should treat it mindful of its non-authoritative status. If feed_start_date or feed_end_date extend beyond the active calendar dates defined in calendar.txt and calendar_dates.txt, the feed is making an explicit assertion that there is no service for dates within the feed_start_date or feed_end_date range but not included in the active calendar dates."
+    helpContent: "Date de fin de validité du flux"
   - name: default_route_color
     displayName: Default color
     datatools: true
@@ -56,216 +56,216 @@
     - value: 0
       text: Tram
     - value: 1
-      text: Subway
+      text: Métro
     - value: 2
-      text: Rail
+      text: Train
     - value: 4
       text: Ferry
     - value: 5
-      text: Cable car
+      text: Téléphérique
     - value: 6
-      text: Gondola
+      text: Gondole
     - value: 7
-      text: Funicular
+      text: Funiculaire
   - name: "feed_version"
     required: false
     inputType: TEXT
     columnWidth: 12
-    helpContent: "The feed publisher can specify a string here that indicates the current version of their GTFS feed. GTFS-consuming applications can display this value to help feed publishers determine whether the latest version of their feed has been incorporated."
+    helpContent: "Indique la version actuelle du flux."
   - name: "feed_contact_email"
     required: false
     inputType: EMAIL
     columnWidth: 12
-    helpContent: "Email address for communication regarding the GTFS dataset and data publishing practices."
+    helpContent: "Adresse mail de contact pour des informations à propos du GTFS."
   - name: "feed_contact_url"
     required: false
     inputType: URL
     columnWidth: 12
-    helpContent: "URL for contact information, a web-form, support desk, or other tools for communication regarding the GTFS dataset and data publishing practices."
+    helpContent: "URL de contact pour des informations à propos du GTFS."
 
 - id: agency
   name: agency.txt
-  helpContent: One or more transit agencies that provide the data in this feed.
+  helpContent: Une ou plusieurs agences opérant le flux.
   fields:
   - name: "agency_id"
     required: false
     inputType: GTFS_ID
     columnWidth: 12
-    helpContent: "The agency_id field is an ID that uniquely identifies a transit agency. A transit feed may represent data from more than one agency. The agency_id is dataset unique. This field is optional for transit feeds that only contain data for a single agency."
+    helpContent: "Identifiant unique qui permet d'identifier une agence."
   - name: "agency_name"
     required: true
     inputType: TEXT
     columnWidth: 12
-    helpContent: "The agency_name field contains the full name of the transit agency. Google Maps will display this name."
+    helpContent: "Contient le nom complet de l'agence opérant le flux."
   - name: "agency_url"
     required: true
     inputType: URL
-    placeholder: https://agency.org
+    placeholder: https://agence.fr
     columnWidth: 12
-    helpContent: "The agency_url field contains the URL of the transit agency. The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped."
+    helpContent: "Contient l'URL de l'agence opérant le flux."
   - name: "agency_timezone"
     required: true
     inputType: TIMEZONE
     columnWidth: 12
-    helpContent: "The agency_timezone field contains the timezone where the transit agency is located. Timezone names never contain the space character but may contain an underscore. If multiple agencies are specified in the feed, each must have the same agency_timezone."
+    helpContent: "Contient le fuseau horaire associé à l'agence opérant le flux."
   - name: "agency_lang"
     required: false
     inputType: LANGUAGE
     columnWidth: 12
-    helpContent: "The agency_lang field contains a two-letter ISO 639-1 code for the primary language used by this transit agency. The language code is case-insensitive (both en and EN are accepted). This setting defines capitalization rules and other language-specific settings for all text contained in this transit agency's feed. Please refer to http://www.loc.gov/standards/iso639-2/php/code_list.php for a list of valid values."
+    helpContent: "Contient le code ISO 639-1 de la langue de l'agence opérant le flux."
   - name: "agency_phone"
     required: false
     inputType: TEXT
     columnWidth: 12
-    helpContent: "The agency_phone field contains a single voice telephone number for the specified agency. This field is a string value that presents the telephone number as typical for the agency's service area. It can and should contain punctuation marks to group the digits of the number. Dialable text (for example, TriMet's \"503-238-RIDE\") is permitted, but the field must not contain any other descriptive text."
+    helpContent: "Contient le numéro de téléphone de l'agence opérant le flux."
   - name: "agency_fare_url"
     required: false
     inputType: URL
-    placeholder: https://agency.org/fares
+    placeholder: https://agence.fr/billets
     columnWidth: 12
-    helpContent: "The agency_fare_url specifies the URL of a web page that allows a rider to purchase tickets or other fare instruments for that agency online. The value must be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. Seehttp://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values."
+    helpContent: "Contient l'URL de la page permettant à l'usager d'acheter un ticket ou de se renseigner sur la grille tarifaire."
   - name: "agency_email"
     required: false
     inputType: EMAIL
-    placeholder: contact@agency.org
+    placeholder: contact@agence.fr
     columnWidth: 12
-    helpContent: "The agency_email field contains a single valid email address actively monitored by the agency’s customer service department. This email address will be considered a direct contact point where transit riders can reach a customer service representative at the agency."
+    helpContent: "Contient l'adresse mail du service client de l'agence opérant le flux."
   - name: agency_branding_url
     required: false
-    displayName: Agency branding URL
+    displayName: URL du branding de l'agence
     datatools: false
-    placeholder: https://agency.org/assets/agency/XYZ
+    placeholder: https://agence.fr/branding
     inputType: URL
     columnWidth: 12
     helpContent:
 
 - id: stop
   name: stops.txt
-  helpContent: Individual locations where vehicles pick up or drop off passengers.
+  helpContent: Emplacements de dépôt et de récupération des usagers par le véhicule
   fields:
   - name: "stop_id"
     required: true
     inputType: GTFS_ID
     columnWidth: 6
-    helpContent: "The stop_id field contains an ID that uniquely identifies a stop or station. Multiple routes may use the same stop. The stop_id is dataset unique."
+    helpContent: "Identifiant unique qui permet d'identifier un arrêt."
   - name: "stop_code"
     required: false
     inputType: TEXT
     columnWidth: 6
-    helpContent: "The stop_code field contains short text or a number that identifies the stop for passengers. Stop codes are often used in phone-based transit information systems or printed on stop signage to make it easier for riders to get a stop schedule or real-time arrival information for a particular stop."
+    helpContent: "Contient un court texte ou numéro permettant d'identifier l'arrêt."
   - name: "stop_name"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "The stop_name field contains the name of a stop or station. Please use a name that people will understand in the local and tourist vernacular."
+    helpContent: "Contient le nom de l'arrêt. Ce nom doit notamment être compréhensible autant pour les locaux que pour les touristes."
   - name: "stop_desc"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "The stop_desc field contains a description of a stop. Please provide useful, quality information. Do not simply duplicate the name of the stop."
+    helpContent: "Contient une description de l'arrêt."
   - name: "stop_lat"
     required: false
     inputType: LATITUDE
     columnWidth: 6
-    helpContent: "The stop_lat field contains the latitude of a stop or station. The field value must be a valid WGS 84 latitude."
+    helpContent: "Contient la latitude de l'arrêt."
   - name: "stop_lon"
     required: false
     inputType: LONGITUDE
     columnWidth: 6
-    helpContent: "The stop_lon field contains the longitude of a stop or station. The field value must be a valid WGS 84 longitude value from -180 to 180."
+    helpContent: "Contient la longitude de l'arrêt."
   - name: "zone_id"
     required: false
     inputType: GTFS_ZONE
     columnWidth: 12
     bulkEditEnabled: true
-    helpContent: "The zone_id field defines the fare zone for a stop ID. Zone IDs are required if you want to provide fare information using fare_rules.txt. If this stop ID represents a station, the zone ID is ignored."
+    helpContent: "Définit la zone tarifaire d'un d'arrêt."
   - name: "stop_url"
     required: false
     inputType: URL
     columnWidth: 12
-    helpContent: "The stop_url field contains the URL of a web page about a particular stop. This should be different from the agency_url and the route_url fields."
+    helpContent: "Contient l'URL d'une page d'information d'un arrêt spécifique."
   - name: "location_type"
     required: false
     bulkEditEnabled: true
     inputType: DROPDOWN
     options:
     - value: '0'
-      text: Stop (0)
+      text: Point d'arrêt (0)
     - value: '1'
-      text: Station (1)
+      text: Zone d'arrêt (1)
     - value: '2'
-      text: Entrance/Exit (2)
+      text: Entrée/Sortie (2)
     - value: '3'
-      text: Generic Node (3)
+      text: Emplacement générique (3)
     - value: '4'
-      text: Boarding Area (4)
+      text: Zone d'embarquement (4)
     columnWidth: 7
-    helpContent: "The location_type field identifies whether this stop ID represents a stop or station. If no location type is specified, or the location_type is blank, stop IDs are treated as stops. Stations may have different properties from stops when they are represented on a map or used in trip planning."
+    helpContent: "Permet de définir si l'arrêt est un point d'arrêt ou une zone d'arrêt. Si laissé vide, l'arrêt sera considéré comme un point d'arrêt."
   - name: "platform_code"
     required: false
     inputType: TEXT
     columnWidth: 5
-    helpContent: "Platform identifier for a platform stop (a stop belonging to a station). This should be just the platform identifier (eg. G or 3)."
+    helpContent: "Permet d'identifier le quai"
   - name: "parent_station"
     required: false
     inputType: GTFS_STOP
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "For stops that are physically located inside stations, the parent_station field identifies the station associated with the stop. To use this field, stops.txt must also contain a row where this stop ID is assigned location type=1."
+    helpContent: "Permet d'associer une zone d'arrêt à un point d'arrêt."
   - name: "stop_timezone"
     required: false
     inputType: TIMEZONE
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "The stop_timezone field contains the timezone in which this stop or station is located. If omitted, the stop should be assumed to be located in the timezone specified byagency_timezone in agency.txt."
+    helpContent: "Contient le fuseau horaire associe à l'arrêt."
   - name: "wheelchair_boarding"
     required: false
     inputType: DROPDOWN
     bulkEditEnabled: true
     options:
     - value: 0
-      text: No information (0)
+      text: Aucune information (0)
     - value: 1
-      text: At least some vehicles (1)
+      text: Au moins quelques véhicules (1)
     - value: 2
-      text: Not possible (2)
+      text: Pas possible (2)
     columnWidth: 12
-    helpContent: "The wheelchair_boarding field identifies whether wheelchair boardings are possible from the specified stop or station. The field can have the following values:"
+    helpContent: "Définit si l'embarquement des UFR est possible à l'arrêt."
 
 
 - id: route
   name: routes.txt
-  helpContent: This file contains information for a route.
+  helpContent: Ce fichier contient des informations sur les itinéraires.
   fields:
   - name: status
     datatools: true
-    displayName: Status
+    displayName: Statut
     bulkEditEnabled: true
     required: true
     inputType: DROPDOWN
     options:
     - value: 0
-      text: 'In Progress'
+      text: 'En cours'
     - value: 1
-      text: 'Pending Approval'
+      text: 'En attente de validation'
     - value: 2
-      text: 'Approved'
+      text: 'Validé'
     columnWidth: 6
     adminOnly: true
     # helpContent: The route_id field contains an ID that uniquely identifies a route. The route_id is dataset unique.
   - name: publicly_visible
     datatools: true
-    displayName: Public?
+    displayName: Public ?
     bulkEditEnabled: true
     required: true
     inputType: DROPDOWN
     options:
     - value: 0
-      text: 'No'
+      text: 'Non'
     - value: 1
-      text: 'Yes'
+      text: 'Oui'
     columnWidth: 6
     adminOnly: true
     # helpContent: The route_id field contains an ID that uniquely identifies a route. The route_id is dataset unique.
@@ -273,28 +273,28 @@
     required: true
     inputType: GTFS_ID
     columnWidth: 5
-    helpContent: The route_id field contains an ID that uniquely identifies a route. The route_id is dataset unique.
+    helpContent: Identifiant unique qui permet d'identifier un itinéraire.
   - name: route_short_name
     required: true
     inputType: TEXT
     columnWidth: 7
-    helpContent: The route_short_name contains the short name of a route. This will often be a short, abstract identifier like "32", "100X", or "Green" that riders use to identify a route, but which doesn't give any indication of what places the route serves.
+    helpContent: Contient le nom raccourci de l'itinéraire, généralement le nom commun donné par les usagers (31, L10, B, ...).
   - name: route_long_name
     required: true
     inputType: TEXT
     columnWidth: 12
-    helpContent: The route_long_name contains the full name of a route. This name is generally more descriptive than the route_short_name and will often include the route's destination or stop. At least one of route_short_name or route_long_name must be specified, or potentially both if appropriate. If the route does not have a long name, please specify a route_short_name and use an empty string as the value for this field.
+    helpContent: Contient le nom complet de l'itinéraire.
   - name: agency_id
     required: false
     inputType: GTFS_AGENCY
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: The agency_id field defines an agency for the specified route. This value is referenced from the agency.txt file. Use this field when you are providing data for routes from more than one agency.
+    helpContent: Définit l'agence opérant l'itinéraire.
   - name: route_desc
     required: false
     inputType: TEXT
     columnWidth: 12
-    helpContent: 'Contains a description of a route. Please provide useful, quality information. Do not simply duplicate the name of the route. For example, "A trains operate between Inwood-207 St, Manhattan and Far Rockaway-Mott Avenue, Queens at all times. Also from about 6AM until about midnight, additional A trains operate between Inwood-207 St and Lefferts Boulevard (trains typically alternate between Lefferts Blvd and Far Rockaway)."'
+    helpContent: Contient une description de l'itinéraire.
   - name: route_type
     required: true
     inputType: GTFS_ROUTE_TYPE
@@ -305,17 +305,17 @@
     - value: 0
       text: Tram
     - value: 1
-      text: Subway
+      text: Métro
     - value: 2
-      text: Rail
+      text: Train
     - value: 4
       text: Ferry
     - value: 5
-      text: Cable car
+      text: Téléphérique
     - value: 6
-      text: Gondola
+      text: Gondole
     - value: 7
-      text: Funicular
+      text: Funiculaire
     - value: 11
       text: Trolleybus
     - value: 12
@@ -467,120 +467,120 @@
     - value: 1702
       text: Horse-drawn Carriage
     columnWidth: 12
-    helpContent: The route_type field describes the type of transportation used on a route. Valid values for this field are...
+    helpContent: Décrit le mode de transport de l'itinéraire.
   - name: route_sort_order
     required: false
     inputType: POSITIVE_INT
     columnWidth: 6
-    helpContent: The route_sort_order field can be used to order the routes in a way which is ideal for presentation to customers. It must be a non-negative integer. Routes with smaller route_sort_order values should be displayed before routes with larger route_sort_order values.
+    helpContent: Permet d'ordonnancer les routes pour une présentation idéale à l'usager (lignes de métro avant lignes de bus par exemple).
   - name: continuous_pickup
     required: false
     inputType: DROPDOWN
     bulkEditEnabled: true
     options:
     - value: 0
-      text: Continuous stopping pickup (0)
+      text: Ramassage continu possible (0)
     - value: 1
-      text: No continuous stopping pickup (1)
+      text: Pas de ramassage continu (1)
     - value: 2
-      text: Must phone an agency to arrange continuous stopping pickup (2)
+      text: Appeler l'agence pour prévoir le ramassage continu (2)
     - value: 3
-      text: Must coordinate with a driver to arrange continuous stopping pickup (3)
+      text: Ramassage continu discuté avec le chauffeur (3)
     columnWidth: 12
-    helpContent: Indicates whether a rider can board the transit vehicle anywhere along the vehicle’s travel path.
+    helpContent: Indique si un usager peut monter dans le véhicule à n'importe quel endroit du trajet.
   - name: continuous_drop_off
     required: false
     inputType: DROPDOWN
     bulkEditEnabled: true
     options:
     - value: 0
-      text: Continuous stopping drop-off (0)
+      text: Dépôt continu possible (0)
     - value: 1
-      text: No continuous stopping drop-off (1)
+      text: Pas de dépôt continu possible (1)
     - value: 2
-      text: Must phone an agency to arrange continuous stopping drop-off (2)
+      text: Appeler l'agence pour prévoir le dépôt continu (2)
     - value: 3
-      text: Must coordinate with a driver to arrange continuous stopping drop-off (3)
+      text: Dépôt continu discuté avec le chauffeur (3)
     columnWidth: 12
-    helpContent: Indicates whether a rider can alight from the transit vehicle at any point along the vehicle’s travel path.
+    helpContent: Indique si un usager peut descendre du véhicule à n'importe quel endroit du trajet.
   - name: route_url
     required: false
     inputType: URL
-    placeholder: https://agency.org/route/1234
+    placeholder: https://agence.fr/itineraire/31
     columnWidth: 12
-    helpContent: The route_url field contains the URL of a web page about that particular route. This should be different from the agency_url.
+    helpContent: Contient l'URL d'une page d'information d'un itinéraire spécifique.
   - name: route_color
     required: false
     inputType: COLOR
     placeholder: 'FF0000'
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: In systems that have colors assigned to routes, the route_color field defines a color that corresponds to a route. The color must be provided as a six-character hexadecimal number, for example, 00FFFF. If no color is specified, the default route color is white (FFFFFF).
+    helpContent: Définit une couleur correspondant à l'itinéraire.
   - name: route_text_color
     required: false
     inputType: DROPDOWN
     bulkEditEnabled: true
     options:
       - value: 'FFFFFF'
-        text: White
+        text: Blanc
       - value: '000000'
-        text: Black
+        text: Noir
     columnWidth: 6
-    helpContent: The route_text_color field can be used to specify a legible color to use for text drawn against a background of route_color. The color must be provided as a six-character hexadecimal number, for example, FFD700. If no color is specified, the default text color is black (000000).
+    helpContent: Définit une couleur utilisé pour écrire du texte sur un fond correspondant à route_color.
   - name: wheelchair_accessible
     required: false
-    displayName: Is route wheelchair accessible?
+    displayName: Est-ce que l'itinéraire est accessible aux UFR ?
     inputType: DROPDOWN
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: Indicates whether vehicles that operate on this route are wheelchair accessible.
+    helpContent: Indique si les véhicules opérant sur cette route sont accessibles aux UFR.
     options:
       - value: 0
-        text: No information (0)
+        text: Pas d'informations (0)
       - value: 1
-        text: Yes (1)
+        text: Oui (1)
       - value: 2
-        text: No (2)
+        text: Non (2)
   - name: route_branding_url
     required: false
     displayName: Route branding URL
     datatools: false
-    placeholder: https://agency.org/assets/route/1234
+    placeholder: https://agence.fr/branding/itineraire/31
     inputType: URL
     columnWidth: 12
     helpContent:
 
 - id: trip
   name: trips.txt
-  helpContent: Trips for each route. A trip is a sequence of two or more stops that occurs at specific time.
+  helpContent: "Trajets pour chaque itineraire. Un trajet est une séquence d'au moins deux arrêts."
   fields:
   - name: "route_id"
     required: true
     inputType: GTFS_ROUTE
     columnWidth: 6
-    helpContent: "The route_id field contains an ID that uniquely identifies a route. This value is referenced from the routes.txt file."
+    helpContent: "Identifiant unique qui permet d'identifier un itinéraire."
   - name: "service_id"
     required: true
     inputType: GTFS_SERVICE
     columnWidth: 6
-    helpContent: "The service_id contains an ID that uniquely identifies a set of dates when service is available for one or more routes. This value is referenced from thecalendar.txt or calendar_dates.txt file."
+    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le trajet est en service."
   - name: "trip_id"
     required: true
     inputType: GTFS_ID
     columnWidth: 6
-    helpContent: "The trip_id field contains an ID that identifies a trip. The trip_id is dataset unique."
+    helpContent: "Identifiant unique qui permet d'identifier un trajet."
   - name: "trip_headsign"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "The trip_headsign field contains the text that appears on a sign that identifies the trip's destination to passengers. Use this field to distinguish between different patterns of service in the same route. If the headsign changes during a trip, you can override the trip_headsign by specifying values for the the stop_headsign field in stop_times.txt."
+    helpContent: "Girouette du véhicule, généralement l'arrêt Terminus du trajet."
   - name: "trip_short_name"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "The trip_short_name field contains the text that appears in schedules and sign boards to identify the trip to passengers, for example, to identify train numbers for commuter rail trips. If riders do not commonly rely on trip names, please leave this field blank."
+    helpContent: "Nom apparaissant sur les calendriers et les indications à bord. Permet à l'usager d'identifier le trajet."
   - name: "direction_id"
     required: false
     inputType: DROPDOWN
@@ -589,18 +589,18 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The direction_id field contains a binary value that indicates the direction of travel for a trip. Use this field to distinguish between bi-directional trips with the same route_id. This field is not used in routing; it provides a way to separate trips by direction when publishing time tables. You can specify names for each direction with the trip_headsign field."
+    helpContent: "Permet d'identifier si le sens du trajet est aller ou retour."
   - name: "block_id"
     required: false
     inputType: GTFS_BLOCK
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "The block_id field identifies the block to which the trip belongs. A block consists of two or more sequential trips made using the same vehicle, where a passenger can transfer from one trip to the next just by staying in the vehicle. The block_id must be referenced by two or more trips in trips.txt."
+    helpContent: "Permet de définir à quel bloc appartient le trajet."
   - name: "shape_id"
     required: false
     inputType: GTFS_SHAPE
     columnWidth: 6
-    helpContent: "The shape_id field contains an ID that defines a shape for the trip. This value is referenced from the shapes.txt file. The shapes.txt file allows you to define how a line should be drawn on the map to represent a trip."
+    helpContent: "Permet de définir un tracé de circulation associé au trajet"
   - name: "wheelchair_accessible"
     required: false
     inputType: DROPDOWN
@@ -610,7 +610,7 @@
     - value: '1'
     - value: '2'
     columnWidth: 6
-    helpContent: "0 (or empty) - indicates that there is no accessibility information for the trip"
+    helpContent: "0 (ou vide) indique qu'il n'y a pas d'information d'accessibilité UFR disponible."
   - name: "bikes_allowed"
     required: false
     inputType: DROPDOWN
@@ -620,44 +620,44 @@
     - value: '1'
     - value: '2'
     columnWidth: 6
-    helpContent: "0 (or empty) - indicates that there is no bike information for the trip"
+    helpContent: "0 (ou vide) indique qu'il n'y a pas d'information d'accessibilité vélo disponible."
 
 
 - id: stop_time
   name: stop_times.txt
-  helpContent: Times that a vehicle arrives at and departs from individual stops for each trip.
+  helpContent: "Horaires d'arrivée et de départ des véhicules aux arrêts."
   fields:
   - name: "trip_id"
     required: true
     inputType: GTFS_TRIP
     columnWidth: 6
-    helpContent: "The trip_id field contains an ID that identifies a trip. This value is referenced from the trips.txt file."
+    helpContent: "Identifiant unique qui permet d'identifier un trajet."
   - name: "arrival_time"
     required: true
     inputType: TIME
     columnWidth: 6
-    helpContent: "The arrival_time specifies the arrival time at a specific stop for a specific trip on a route. The time is measured from "
+    helpContent: "Heure d'arrivée à l'arrêt."
   - name: "departure_time"
     required: true
     inputType: TIME
     columnWidth: 6
-    helpContent: "The departure_time specifies the departure time from a specific stop for a specific trip on a route. The time is measured from "
+    helpContent: "Heure de départ de l'arrêt"
   - name: "stop_id"
     required: true
     inputType: GTFS_STOP
     columnWidth: 6
-    helpContent: "The stop_id field contains an ID that uniquely identifies a stop. Multiple routes may use the same stop. The stop_id is referenced from the stops.txt file. If location_type is used in stops.txt, all stops referenced in stop_times.txt must have location_type of 0."
+    helpContent: "Identifiant unique qui permet d'identifier un arrêt."
   - name: "stop_sequence"
     required: true
     inputType: POSITIVE_INT
     columnWidth: 6
-    helpContent: "The stop_sequence field identifies the order of the stops for a particular trip. The values for stop_sequence must be non-negative integers, and they must increase along the trip."
+    helpContent: "Identifie l'ordonnancement des arrêts pour un trajet particulier."
   - name: "stop_headsign"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "The stop_headsign field contains the text that appears on a sign that identifies the trip's destination to passengers. Use this field to override the defaulttrip_headsign when the headsign changes between stops. If this headsign is associated with an entire trip, use trip_headsign instead."
+    helpContent: "Préférer utiliser le trip_headsign."
   - name: "pickup_type"
     required: false
     inputType: DROPDOWN
@@ -668,7 +668,7 @@
     - value: '2'
     - value: '3'
     columnWidth: 6
-    helpContent: "The pickup_type field indicates whether passengers are picked up at a stop as part of the normal schedule or whether a pickup at the stop is not available. This field also allows the transit agency to indicate that passengers must call the agency or notify the driver to arrange a pickup at a particular stop. Valid values for this field are:"
+    helpContent: "Indique si le ramassage de l'usager fait partie du plan habituel ou si un ramassage à cet arrêt n'est pas possible. Indique aussi s'il est possible de notifier l'agence ou le chauffeur pour monter dans le véhicule à un arrêt particulier."
   - name: "drop_off_type"
     required: false
     inputType: DROPDOWN
@@ -679,12 +679,12 @@
     - value: '2'
     - value: '3'
     columnWidth: 6
-    helpContent: "The drop_off_type field indicates whether passengers are dropped off at a stop as part of the normal schedule or whether a drop off at the stop is not available. This field also allows the transit agency to indicate that passengers must call the agency or notify the driver to arrange a drop off at a particular stop. Valid values for this field are:"
+    helpContent: "Indique si le dépôt de l'usager fait partie du plan habituel ou si un dépôt à cet arrêt n'est pas possible. Indique aussi s'il est possible de notifier l'agence ou le chauffeur pour descendre du véhicule à un arrêt particulier."
   - name: "shape_dist_traveled"
     required: false
     inputType: POSITIVE_NUM
     columnWidth: 6
-    helpContent: "When used in the stop_times.txt file, the shape_dist_traveled field positions a stop as a distance from the first shape point. The shape_dist_traveled field represents a real distance traveled along the route in units such as feet or kilometers. For example, if a bus travels a distance of 5.25 kilometers from the start of the shape to the stop, the shape_dist_traveled for the stop ID would be entered as "
+    helpContent: "Représente la distance parcourue"
   - name: "timepoint"
     required: false
     inputType: DROPDOWN
@@ -694,7 +694,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The timepoint field can be used to indicate if the specified arrival and departure times for a stop are strictly adhered to by the transit vehicle or if they are instead approximate and/or interpolated times. The field allows a GTFS producer to provide interpolated stop times that potentially incorporate local knowledge, but still indicate if the times are approximate. For stop-time entries with specified arrival and departure times, valid values for this field are:"
+    helpContent: "Indique si les horaires sont des estimations ou des temps réels."
 
 - id: calendar
   name: calendar.txt
@@ -704,7 +704,7 @@
     required: true
     inputType: GTFS_ID
     columnWidth: 6
-    helpContent: "The service_id contains an ID that uniquely identifies a set of dates when service is available for one or more routes. Each service_id value can appear at most once in a calendar.txt file. This value is dataset unique. It is referenced by the trips.txt file."
+    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le trajet est en service."
   - name: "description"
     required: false
     datatools: true
@@ -720,7 +720,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The monday field contains a binary value that indicates whether the service is valid for all Mondays."
+    helpContent: "Indique si le service est en fonctionnement tous les lundis."
   - name: "tuesday"
     required: true
     inputType: DAY_OF_WEEK_BOOLEAN
@@ -729,7 +729,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The tuesday field contains a binary value that indicates whether the service is valid for all Tuesdays."
+    helpContent: "Indique si le service est en fonctionnement tous les mardis."
   - name: "wednesday"
     required: true
     inputType: DAY_OF_WEEK_BOOLEAN
@@ -738,7 +738,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The wednesday field contains a binary value that indicates whether the service is valid for all Wednesdays."
+    helpContent: "Indique si le service est en fonctionnement tous les mercredis."
   - name: "thursday"
     required: true
     inputType: DAY_OF_WEEK_BOOLEAN
@@ -747,7 +747,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The thursday field contains a binary value that indicates whether the service is valid for all Thursdays."
+    helpContent: "Indique si le service est en fonctionnement tous les jeudis."
   - name: "friday"
     required: true
     inputType: DAY_OF_WEEK_BOOLEAN
@@ -756,7 +756,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The friday field contains a binary value that indicates whether the service is valid for all Fridays."
+    helpContent: "Indique si le service est en fonctionnement tous les vendredis."
   - name: "saturday"
     required: true
     inputType: DAY_OF_WEEK_BOOLEAN
@@ -765,7 +765,7 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The saturday field contains a binary value that indicates whether the service is valid for all Saturdays."
+    helpContent: "Indique si le service est en fonctionnement tous les samedis."
   - name: "sunday"
     required: true
     inputType: DAY_OF_WEEK_BOOLEAN
@@ -774,19 +774,19 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "The sunday field contains a binary value that indicates whether the service is valid for all Sundays."
+    helpContent: "Indique si le service est en fonctionnement tous les dimanches."
   - name: "start_date"
     required: true
     inputType: DATE
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "The start_date field contains the start date for the service."
+    helpContent: "Contient la date de début de service"
   - name: "end_date"
     required: true
     inputType: DATE
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "The end_date field contains the end date for the service. This date is included in the service interval."
+    helpContent: "Contient la date de fin de service"
 
 
 - id: calendar_dates
@@ -797,13 +797,13 @@
     required: true
     inputType: GTFS_SERVICE
     columnWidth: 6
-    helpContent: "The service_id contains an ID that uniquely identifies a set of dates when a service exception is available for one or more routes. Each (service_id, date) pair can only appear once in calendar_dates.txt. If the a service_id value appears in both the calendar.txt and calendar_dates.txt files, the information in calendar_dates.txt modifies the service information specified in calendar.txt. This field is referenced by the trips.txt file."
+    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le trajet est en service."
   - name: "date"
     required: true
     inputType: DATE
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: "The date field specifies a particular date when service availability is different than the norm. You can use the exception_type field to indicate whether service is available on the specified date."
+    helpContent: "Indique une date à laquelle la disponibilité du service est différente de d'habitude."
   - name: "exception_type"
     required: true
     inputType: DROPDOWN
@@ -812,7 +812,7 @@
     - value: '1'
     - value: '2'
     columnWidth: 6
-    helpContent: "The exception_type indicates whether service is available on the date specified in thedate field."
+    helpContent: "Indique si le service est disponible ou non à la date précédemment indiquée."
 
 
 - id: fare_attributes

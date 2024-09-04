@@ -112,7 +112,7 @@ components:
     account: Mon compte
     alerts: Alertes
     editor: Editeur
-    guide: Manuel
+    guide: Documentation
     login: Se connecter
     logout: Déconnexion
     manager: Gestionnaire
@@ -326,12 +326,12 @@ components:
   EntityDetailsHeader:
     attributes: Attributs
     feedInfo: Infos du flux
-    noValidationIssues: Aucun problème de valaidation
+    noValidationIssues: Aucun problème de validation
     requiredField: "* indique un champ obligatoire"
     routeDetails: Détails de l'itinéraire
     rules: Règles
     saveChanges: Enregistrer les modifcations
-    tripPatterns: Motifs de voyage
+    tripPatterns: Circulations
     undoChanges: Annuler les modifications
     validationIssues: Problème(s) de valdation
     zoomTo: Zoom sur
@@ -399,7 +399,7 @@ components:
   FeedSourcePanel:
     chooseProject: "[choisir un projet]"
     chooseProjectToView: Choisir un projet pour afficher les flux
-    createOne: Créer un projet.
+    createOne: Créer un projet
     filters:
       ALL: Tous
       STARRED: Favoris
@@ -413,9 +413,9 @@ components:
     comparisonColumn:
       DEPLOYED: Version déployée
       PUBLISHED: Version publiée
-    createFirst: Créer la permier source de flux !
-    datesValid: Dates valides
-    feedInfo: Infos du flux
+    createFirst: Créer le premier flux
+    datesValid: Dates de validité
+    feedInfo: Informations
     issues: Problèmes
     latestVersion: Dernière version
     status: Statut
@@ -540,7 +540,7 @@ components:
     load: Charger pour éditer
     newVersion: Créer une nouvelle version
     next: Suivant
-    of: de
+    of: sur
     previous: Précédent
     selectFeed: "Sélectionner un flux GTFS à charger:"
     selectVersion: Sélectionner une version pour afficher le résumé
@@ -814,7 +814,7 @@ components:
     contact: Contact
     copyright: Droits d'auteur
     datatools: DataHub Editor
-    guide: Manuel
+    guide: Documentation
     home: Accueil
   MapModal:
     ok: OK
@@ -843,7 +843,7 @@ components:
     interpolateStopTimes: Interpoler les temps d'arrêt ?
     normalizeStopTimes: Normaliser les temps d'arrêt
     normalizeStopTimesQuestion: Normaliser les temps d'arrêt ?
-    selectBeginningPatternStop: "Séectionner l'arrêt de début du motif:"
+    selectBeginningPatternStop: "Séectionner l'arrêt de début de la circulation:"
     tooFewTimepoints: "Vous devez disposer de plus d'un point temporel pour interpoler les temps."
     usageExplanationOne: Cette fonction est utile lorsque les temps de parcours d'un ou de plusieurs
       arrêts du modèle changent. Prenons l'exemple d'un trajet qui a été modifié pour parcourir une
@@ -1041,8 +1041,8 @@ components:
     autoFetchDisabled: Récupération automatique désactivée
     deployments: Déploiements
     feeds:
-      createFirst: Créer la première source de flux !
-      new: Nouvelle source de flux
+      createFirst: Créer le premier flux
+      new: Nouveau flux
       search: Recherche par nom
       table:
         deployable: Déployable ?
@@ -1052,7 +1052,7 @@ components:
         public: Public ?
         retrievalMethod: Méthode de récupération
         validRange: Plage de validité
-      title: Sources de flux
+      title: Flux
       update: Tout récupérer
     feedSourceDesc: "Une source de flux définit l'emplacement ou la source d'un flux GTFS"
     feedSourceTitle: Qu'est-ce qu'une source de flux ?
@@ -1070,7 +1070,7 @@ components:
     any: au moins un
     comparison:
       DEPLOYED: Déployé
-      LATEST: Le plus récent
+      LATEST: la plus récente
       PUBLISHED: Publié
     deployedVersion: "Version déployée:"
     deployments: Déploiements
@@ -1087,7 +1087,7 @@ components:
         public: Public ?
         retrievalMethod: Méthode de récupération
         validRange: Plage de validité
-      title: Sources de flux
+      title: Flux
       update: Tout récupérer
     filter:
       active: Actif
@@ -1096,7 +1096,7 @@ components:
       expiring: Expirant
       future: Futur
     filterByLabels: Filtrer les flux par étiquettes
-    filterFeedSources: Filtrer les sources de flux sur
+    filterFeedSources: Filtrer les flux par version
     hasDeployedVersion: A une version déployée ?
     hasLatestVersion: A une dernière version ?
     hasPublishedVersion: A une version publiée ?
@@ -1182,7 +1182,7 @@ components:
     here: ici
     learnMore: En savoir plus sur DataHub Editor
     signInHere: se connecter ici
-    viewDashboard: Voir le tableau de bord
+    viewDashboard: Voir mon tableau de bord
   RegionSearch:
     placeholder: Recherche par région ou agence
   ReplaceFileFromString:
@@ -1195,11 +1195,11 @@ components:
     priority: Priorité
     problemType: Type de problème
   RouteLayout:
-    errorOccurred: Une erreur s'est produite lors de la récupération des données
-    jumpToRoute: Aller à un itinéraire
+    errorOccurred: Une erreur est survenue lors de la récupération de la donnée.
+    jumpToRoute: Sélectionner un itinéraire
     route: "Itinéraire:"
     RouteRow:
-      patterns: "%num% motifs"
+      patterns: "%num% circulations"
       stops: "%num% arrêts"
       trips: "%num% trajets"
   ScheduleExceptionForm:
@@ -1246,7 +1246,7 @@ components:
   ShowAllRoutesOnMapFilter:
     fetching: Récupération
     noShapes: Ce flux n'a aucun tracés d'itinéraire encore créé
-    showAllRoutesOnMap: Afficher tous les utilisateurs
+    showAllRoutesOnMap: Afficher les tracés
     tooManyShapeRecords: un fichier shapes.txt volumineux peut avoir un impact sur les performances
   Sidebar:
     about: A propos de cette application
@@ -1338,7 +1338,7 @@ components:
       body: Le reverouillage du flux est autorisé uniquement si une autre session d'édition est en cours pour vous (et non pour un autre utilisateur). Réessayez plus tard ou contactez l'éditeur actuel pour lui demander de terminer sa session.
       title: La tentative de prise en charge de l'édition a échoué !
   TimetableEditor:
-    choosePattern: Choisir un motif de trajet
+    choosePattern: Choisir une circulation
     createNew: créer un nouveau
     deleteSelectedTrip: "Êtes-vous sur de vouloir supprimer %count% trajet sélectionné?"
     deleteSelectedTrips: "Êtes-vous sur de vouloir supprimer %count% trajets sélectionnés?"
@@ -1360,7 +1360,7 @@ components:
     patternsOn: "%truncatedPatternName% sur "
     saveChanges: Enregistrer les modifications
     selectCalendar: "[sélectionner un calendrier]"
-    selectPattern: "[sélectionner un motif]"
+    selectPattern: "[sélectionner une circulation]"
     shiftClickToSubtract: Shift-clic pour soustraire
     showShortcuts: Afficher les raccourcis clavier
     timetableEditor: Editeur d'horaires
@@ -1478,8 +1478,8 @@ components:
     table:
       name: Nom du projet
     title: Projets
-    userDocs: Documents de l'utilisateur
-    welcomeTo: Bienvenue à
+    userDocs: Documentation
+    welcomeTo: Bienvenue sur
   UserList:
     filterByOrg: Filtrer par organisation
     headings:
