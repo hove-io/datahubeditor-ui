@@ -114,7 +114,7 @@ After trips are selected, navigate to the schedule toolbar at the top right of t
 - **Delete trip(s)** - delete selected rows
 - **Undo all** - undo all changes
 - **Save** - save all changes
-- **Offset trip(s)** - specify an offset (`HH:MM`) to offset the last trip in the spreadsheet or whichever rows are selected
+- **Offset trip(s)** - specify an offset (`HH:mm`) to offset the last trip in the spreadsheet or whichever rows are selected
 
 <img src="https://datatools-builds.s3.amazonaws.com/docs/schedules/schedule-toolbar.png" style="box-shadow: 3px 3px 3px gray; border-radius: 10px; width: 300px;">
 
