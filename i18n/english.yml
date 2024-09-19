@@ -12,7 +12,7 @@ components:
     customFileName: Nom du fichier personnalisé
     saveCsvAndFileName: Sauvegarder le fichier CSV et le nom du fichier
   AdminPage:
-    applicationLogs: Logs de l'application
+    applicationLogs: Logs
     backToDashboard: Retour au tableau de bord
     deploymentServers: Serveurs de déploiement
     noAccess: Vous n'avez pas les privilèges suffisants pour accéder à cet 
@@ -31,11 +31,11 @@ components:
       user: Utilisateur
     lastApiRequests: Dernières requêtes API de l'utilisateur
     lastUpdatedAt: dernière mise à jour à
-    noDataText: Pas de jobs actifs en cours
+    noDataText: Pas d'opérations en cours
     refresh: Rafraîchir
     unauthenticated: (non authentifié)
     userLogs: Logs d'authentification de l'utilisateur
-    serverJobs: Jobs du serveur actif
+    serverJobs: Opérations
     viewUserLogs: Afficher les logs de l'utilisateur sur Auth0.com
     name: Nom
     feed:
@@ -325,15 +325,15 @@ components:
     backToFeed: Retour au flux
   EntityDetailsHeader:
     attributes: Attributs
-    feedInfo: Infos du flux
-    noValidationIssues: Aucun problème de validation
+    feedInfo: Informations du flux
+    noValidationIssues: Aucune erreur bloquante
     requiredField: "* indique un champ obligatoire"
     routeDetails: Détails de l'itinéraire
     rules: Règles
     saveChanges: Enregistrer les modifcations
     tripPatterns: Circulations
     undoChanges: Annuler les modifications
-    validationIssues: Problème(s) de valdation
+    validationIssues: erreur(s) bloquante(s)
     zoomTo: Zoom sur
   EntityList:
     createFirst: Créer le premier
@@ -788,13 +788,13 @@ components:
     les détails de l'erreur et une description détaillée des étapes que vous avez suivies à
     <a href='mailto:%supportEmail%'>%supportEmail%</a>"
   JobMonitor:
-    clearCompleted: Effacement terminée
+    clearCompleted: Effacé
     jobs:
-      none: Pas de jobs actifs
+      none: Pas d'opérations en cours
       one: Un job actif
-      some: "%count% jobs actifs"
-    jobsCompleted: Tous les jobs sont complétés
-    serverJobs: Serveur des Jobs
+      some: "%count% opérations en cours"
+    jobsCompleted: Opérations complétées
+    serverJobs: Opérations
     waiting: attente
   LabelPanel:
     labels: Etiquettes
@@ -1251,11 +1251,11 @@ components:
   Sidebar:
     about: A propos de cette application
     account: Comptes
-    serverJobs: Jobs du serveur
+    serverJobs: Opérations
     serverVersion: "Version du serveur:"
     settings: Paramètres
-    uiDeployedAt: "Interface utilisateur déployée à:"
-    uiVersion: "Version de l interface utilisateur:"
+    uiDeployedAt: "Interface utilisateur déployée le:"
+    uiVersion: "Version de l\'interface utilisateur:"
     unknown: Inconnu
   SnapshotItem:
     active: Actif
@@ -1300,7 +1300,7 @@ components:
     REQUESTING_GTFSPLUS_CONTENT: Chargement des données GTFS+
     UPLOADING_GTFSPLUS_FEED: Enregistrement des données GTFS+
     PUBLISHING_GTFSPLUS_FEED: Publication du flux GTFS+
-    VALIDATING_GTFSPLUS_FEED: Mise à jour de la valdation GTFS+
+    VALIDATING_GTFSPLUS_FEED: Mise à jour de la validation GTFS+
     REQUESTING_FEEDVERSION_ISOCHRONES: Calculating access shed
     REQUESTING_DEPLOYMENTS: Chargement des déploiements
     REQUESTING_DEPLOYMENT: Chargement du déploiement
@@ -1324,7 +1324,7 @@ components:
     LOADING_FEEDVERSION_FOR_EDITING: Chargement de la version dans l'utilisateur
     REQUESTING_ORGANIZATIONS: Chargement des organisations
     UPDATING_SERVER: Enregistrement du serveur
-    FETCHING_ALL_JOBS: Récupération des jobs
+    FETCHING_ALL_JOBS: Récupération des opérations
     REQUEST_RTD_ALERTS: Chargements des alertes
     CREATED_SNAPSHOT:
       body: Nouvel instantané "%payload%" créé. Il sera accessible depuis l onglet "Editeur des instantanés" dans la page d accueil de la source du flux.
@@ -1456,8 +1456,8 @@ components:
     hello: Bonjour,
     profile: Profil
     roles:
-      applicationAdmin: Administrateurs de l'application
-      organizationAdmin: Administrateurs de l'organisation
+      applicationAdmin: Administrateur de l'application
+      organizationAdmin: Administrateur de l'organisation
       standardUser: Utilisateur standard
   UserButtons:
     admin: Administrateur
@@ -1465,8 +1465,8 @@ components:
     logout: Déconnexion
   UserHomePage:
     authDisabledInfo: >-
-      Vous êtes en train d'utiliser %appTitle% sans authentification de l'utilisateur.
-      Les fonctions telles que la gestion des utilisateurs et la surveillance de l'activité des flux ne sont pas disponibles.
+      Vous êtes en train d'utiliser %appTitle% sans authentification.
+      Certaines fonctionnalités d'administration ne sont pas disponibles.
     createFirst: Créer mon premier projet
     help:
       content: "Un projet est utilisé pour regrouper les flux GTFS"
@@ -1474,7 +1474,7 @@ components:
     new: Nouveau projet
     noProjects: Vous n'avez actuellement aucun projet
     recentActivity: Activité récente
-    recentActivityNone: Pas d'activité récente pour vos abonnements
+    recentActivityNone: Pas d'activité récente 
     table:
       name: Nom du projet
     title: Projets
