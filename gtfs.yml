@@ -130,14 +130,14 @@
     placeholder: contact@agence.fr
     columnWidth: 12
     helpContent: "Contient l'adresse mail du service client de l'agence opérant le flux."
-  #- name: agency_branding_url
-  #  required: false
-  #  displayName: URL du branding de l'agence
-  #  datatools: false
-  #  placeholder: https://agence.fr/branding
-  #  inputType: URL
-  #  columnWidth: 12
-  #  helpContent:
+  - name: agency_branding_url
+    required: false
+    displayName: URL du branding de l'agence
+    datatools: false
+    placeholder: https://agence.fr/branding
+    inputType: URL
+    columnWidth: 12
+    helpContent:
 
 - id: stop
   name: stops.txt
@@ -541,14 +541,14 @@
         text: Oui (1)
       - value: 2
         text: Non (2)
-  #- name: route_branding_url
-  #  required: false
-  #  displayName: Route branding URL
-  #  datatools: false
-  #  placeholder: https://agence.fr/branding/itineraire/31
-  #  inputType: URL
-  #  columnWidth: 12
-  #  helpContent:
+  - name: route_branding_url
+    required: false
+    displayName: Route branding URL
+    datatools: false
+    placeholder: https://agence.fr/branding/itineraire/31
+    inputType: URL
+    columnWidth: 12
+    helpContent:
 
 - id: trip
   name: trips.txt
