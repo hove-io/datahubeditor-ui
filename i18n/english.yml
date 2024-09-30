@@ -353,7 +353,7 @@ components:
   ExceptionValidationErrorsList:
     andOtherErrors: ...et %errors% autre erreurs
   ExportPatternsModal:
-    exportPatterns: Publier une version avec des motifs propriétaires?
+    exportPatterns: Publier une nouvelle version ?
     no: Non
     yes: Oui
   FeedFetchFrequency:
@@ -368,10 +368,10 @@ components:
   FeedInfo:
     autoFetch: Récupération automatique
     autoPublish: Publication automatique
-    dateFormat: DD.MM.YYYY
+    dateFormat: DD MMM YYYY
     deployable: Déployable
     edit: Editer
-    lastUpdatedDate: Dernière mise à jour %date%
+    lastUpdatedDate: Dernière mise à jour le %date%
     noUpdates: Pas de mises à jour
     private: Privé
     public: Public
@@ -405,7 +405,7 @@ components:
       STARRED: Favoris
       PUBLIC: Public
       PRIVATE: Privé
-    forFeed: Pour le flux
+    forFeed: Pour le projet
     noFeedsYet: Pas encore de flux
     search: Recherche de flux
     unnamed: sans nom
@@ -420,7 +420,7 @@ components:
     latestVersion: Dernière version
     status: Statut
   FeedSourceTableRow:
-    dateFormat: DD.MM.YYYY
+    dateFormat: DD MMMM YYYY
     expired: Expiré il y a %duration%
     lastUpdated: Dernière mise à jour il y à %lastVersionUpdate%
     none: Aucun
@@ -907,7 +907,7 @@ components:
       stopHeadsignPlaceholder: Départ
       stopHeadsignText: Panneau de signalisation de l'arrêt
       stopHeadsignTitle: Panneau de signalisation qui remplace la girouette du voyage entre les arrêts
-      timepoint: Point temporel ?
+      timepoint: Point temporel
       travelTimeHelp: Définir le temps par défaut nécessaire pour se rendre à cet arrêt à partir de l'arrêt précédent
     PickupDropOffSelect:
       available: Disponible (0)
@@ -1249,14 +1249,14 @@ components:
     showAllRoutesOnMap: Afficher les tracés
     tooManyShapeRecords: un fichier shapes.txt volumineux peut avoir un impact sur les performances
   Sidebar:
-    about: A propos de cette application
+    about: A propos de DataHub Editor
     account: Comptes
     serverJobs: Opérations
     serverVersion: "Version du serveur:"
     settings: Paramètres
     uiDeployedAt: "Interface utilisateur déployée le:"
-    uiVersion: "Version de l\'interface utilisateur:"
-    unknown: Inconnu
+    uiVersion: "Version de l'interface utilisateur:"
+    unknown: Inconnue
   SnapshotItem:
     active: Actif
     confirmDelete: Cette opération supprime définitivement cet instantané. Les données sauvegardées ici ne pourront pas être récupérées. Êtes-vous sûr de vouloir continuer ?
