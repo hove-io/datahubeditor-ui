@@ -469,34 +469,8 @@
     helpContent: Permet d'ordonnancer les routes pour une présentation idéale à l'usager (lignes de métro avant lignes de bus par exemple).
   - name: continuous_pickup
     required: false
-    inputType: DROPDOWN
-    bulkEditEnabled: true
-    options:
-    - value: 0
-      text: Ramassage continu possible (0)
-    - value: 1
-      text: Pas de ramassage continu (1)
-    - value: 2
-      text: Appeler l'agence pour prévoir le ramassage continu (2)
-    - value: 3
-      text: Ramassage continu discuté avec le chauffeur (3)
-    columnWidth: 12
-    helpContent: Indique si un usager peut monter dans le véhicule à n'importe quel endroit du trajet.
   - name: continuous_drop_off
     required: false
-    inputType: DROPDOWN
-    bulkEditEnabled: true
-    options:
-    - value: 0
-      text: Dépôt continu possible (0)
-    - value: 1
-      text: Pas de dépôt continu possible (1)
-    - value: 2
-      text: Appeler l'agence pour prévoir le dépôt continu (2)
-    - value: 3
-      text: Dépôt continu discuté avec le chauffeur (3)
-    columnWidth: 12
-    helpContent: Indique si un usager peut descendre du véhicule à n'importe quel endroit du trajet.
   - name: route_url
     required: false
     inputType: URL
