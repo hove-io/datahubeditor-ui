@@ -75,7 +75,7 @@
     "react-addons-shallow-compare": "^15.4.1",
     "react-addons-update": "^15.6.3",
     "react-bootstrap": "0.32.3",
-    "react-bootstrap-datetimepicker": "ibi-group/react-bootstrap-datetimepicker#bb3054c6dcccbb6b7009d9cc4a2f3b80d4830c99",
+    "react-bootstrap-datetimepicker": "hove-io/react-bootstrap-datetimepicker#0576a4f41ed3708d56a41bbd40f77c6836231084", 
     "react-bootstrap-table": "^4.3.1",
     "react-color": "^2.3.4",
     "react-dnd": "^2.1.4",
