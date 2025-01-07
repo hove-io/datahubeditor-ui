@@ -49,9 +49,9 @@ components:
       errorCount: "Dernière version: Nombre de problèmes"
       startDate: "Dernière version: Date de début"
       stopTimesCount: "Dernière version: Nombre de temps d arrêt"
-      tripCount: "Dernière version: Nombre de trajets"
+      tripCount: "Dernière version: Nombre de services"
       stopCount: "Dernière version: Nombre arrêts"
-      routeCount: "Dernière version: Nombre itinéraires"
+      routeCount: "Dernière version: Nombre lignes"
     sortBy: Trier par
     url: "URL de téléchargement du flux"
   Brand:
@@ -98,9 +98,9 @@ components:
         label: Publier une nouvelle version du flux avec des fichiers 
           propriétaires
       confirmPublishWithUnapproved:
-        label: Confirmer la publication avec des itinéraires non approuvés
-    unapprovedRoutesHeader: "Les itinéraires suivants ne sont pas approuvés"
-    unapprovedRoutesDesc: "Ces itinéraires ne seront pas inclus:"
+        label: Confirmer la publication avec des lignes non approuvées
+    unapprovedRoutesHeader: "Les lignes suivants ne sont pas approuvées"
+    unapprovedRoutesDesc: "Ces lignes ne seront pas incluses:"
     missingNameAlert: Vous devez donner un nom valide à l'instantané
     ok: OK
     title: Créer un nouvel instantané
@@ -163,7 +163,7 @@ components:
       brandingUrlRoot: URL de la marque
       carDropoffTime: Temps de dépôt de la voiture
       driveDistanceReluctance: Réticence à l'égard de la distance de conduite
-      numItineraries: "Nombre d itinéraires"
+      numItineraries: "Nombre de lignes"
       requestLogFile: Demander le fichier des logs
       stairsReluctance: Réticence aux escaliers
       title: Configuration du routeur
@@ -188,9 +188,9 @@ components:
     expires: Expire
     loadStatus: Chargé avec succès
     name: Nom
-    routeCount: Nombre d'itinéraires
+    routeCount: Nombre de lignes
     stopTimesCount: Nombre de temps d'arrêt
-    tripCount: Nombre de trajets
+    tripCount: Nombre de services
     validFrom: Valide à partir de
     version: Version
   DeploymentViewer:
@@ -206,9 +206,9 @@ components:
       expires: Expire
       loadStatus: Chargé avec succès
       name: Nom
-      routeCount: Nombre d'itinéraires
+      routeCount: Nombre de lignes
       stopTimesCount: Nombre de temps d'arrêt
-      tripCount: Nombre de trajets
+      tripCount: Nombre de services
       validFrom: Valide à partir de
       version: Version
     to: à
@@ -328,10 +328,10 @@ components:
     feedInfo: Informations du flux
     noValidationIssues: Aucune erreur bloquante
     requiredField: "* indique un champ obligatoire"
-    routeDetails: Détails de l'itinéraire
+    routeDetails: Détails de la ligne
     rules: Règles
     saveChanges: Enregistrer les modifcations
-    tripPatterns: Circulations
+    tripPatterns: Itinéraires
     undoChanges: Annuler les modifications
     validationIssues: erreur(s) bloquante(s)
     zoomTo: Zoom sur
@@ -551,10 +551,10 @@ components:
   FeedVersionTabs:
     agencyCount: Nombre d'agences
     daysActive: Jours d'activité
-    routeCount: Nombre d'itinéraires
+    routeCount: Nombre de lignes
     stopCount: Nombre d'arrêts
     stopTimesCount: Nombre de temps d'arrêt
-    tripCount: Nombre de trajets
+    tripCount: Nombre de services
     validDates: Dates valides
   FeedVersionViewer:
     confirmDelete: Êtes-vous sûr de vouloir supprimer cette version ? Cette opération ne peut pas être annulée.
@@ -589,7 +589,7 @@ components:
       brandingUrlRoot: URL de la marque
       carDropoffTime: Temps de dépôt de la voiture
       driveDistanceReluctance: Réticence à l'égard de la distance de conduite
-      numItineraries: "Nombre d itinéraires"
+      numItineraries: "Nombre de lignes"
       requestLogFile: Demander le fichier des logs
       stairsReluctance: Réticence aux escaliers
       title: Configuration du routeur
@@ -678,7 +678,7 @@ components:
         brandingUrlRoot: URL de la marque
         carDropoffTime: Temps de dépôt de la voiture
         driveDistanceReluctance: Réticence à l'égard de la distance de conduite
-        numItineraries: "Nombre d itinéraires"
+        numItineraries: "Nombre de lignes"
         requestLogFile: Demander le fichier des logs
         stairsReluctance: Réticence aux escaliers
         title: Configuration du routeur
@@ -728,8 +728,8 @@ components:
       title: Editer les agences
       label: Agences
     calendar:
-      title: Editer le calendrier
-      label: Calendrier
+      title: Editer les calendriers
+      label: Calendriers
     fare:
       title: Editer les tarifs
       label: Tarifs
@@ -737,8 +737,8 @@ components:
       title: Editer les informations du flux
       label: Informations du flux
     route:
-      title: Editer les itinéraires
-      label: Itinéraires
+      title: Editer les lignes
+      label: Lignes
     scheduleExceptions:
       title: Editer les exceptions horaires
       label: Exceptions horaires
@@ -759,11 +759,11 @@ components:
     explorer: Explorateur de validation
     issues:
       other: Autres problèmes
-      routes: Problèmes liés aux itinéraires
+      routes: Problèmes liés aux lignes
       shapes: Problèmes liés aux tracés
       stop_times: Problèmes liés aux temps d'arrêt
       stops: Problèmes liés aux arrêts
-      trips: Problèmes liés aux trajets
+      trips: Problèmes liés aux services
     noResults: Pas de résultats de validation
     tips:
       DATE_NO_SERVICE: "Si le service ne fonctionne pas le
@@ -827,9 +827,9 @@ components:
     skipped: "Enregistrement ignorés:"
     skippedTableRecords: "%table%: %skippedCount%"
     strategyUsed: "Stratégie utilisée: %strategy%"
-    tripIdsToCheck: "ID de trajets à vérifier: %tripIdCount%"
-    DEFAULT: Les ID de trajets étaient uniques dans les flux sources. Flux fusionné créé avec succès
-    CHECK_STOP_TIMES: Certains ID de trajets ont été trouvés dans les deux fluxs. Flux fusionnée créé avec succès
+    tripIdsToCheck: "ID de services à vérifier: %tripIdCount%"
+    DEFAULT: Les ID de services étaient uniques dans les flux sources. Flux fusionné créé avec succès
+    CHECK_STOP_TIMES: Certains ID de services ont été trouvés dans les deux fluxs. Flux fusionnée créé avec succès
     title:
       failure: "Attention: Erreurs rencontrées lors de la fusion de flux !"
       success: "Fusion des flux réalisée avec succès"
@@ -843,10 +843,10 @@ components:
     interpolateStopTimes: Interpoler les temps d'arrêt ?
     normalizeStopTimes: Normaliser les temps d'arrêt
     normalizeStopTimesQuestion: Normaliser les temps d'arrêt ?
-    selectBeginningPatternStop: "Séectionner l'arrêt de début de la circulation:"
+    selectBeginningPatternStop: "Séectionner l'arrêt de début de l'itinéraire:"
     tooFewTimepoints: "Vous devez disposer de plus d'un point temporel pour interpoler les temps."
     usageExplanationOne: Cette fonction est utile lorsque les temps de parcours d'un ou de plusieurs
-      arrêts du modèle changent. Prenons l'exemple d'un trajet qui a été modifié pour parcourir une
+      arrêts du modèle changent. Prenons l'exemple d'un services qui a été modifié pour parcourir une
       plus grande distance, pour lequel un arrêt a été ajouté (ou supprimé).
       Une fois que vous avez ajusté les temps de parcours pour tenir compte de ces changements,
       vous pouvez normaliser les temps d'arrêt pour les aligner sur les temps de parcours
@@ -913,7 +913,7 @@ components:
       available: Disponible (0)
       continuousDropOffTitle: Indique si un usager peut descendre du véhicule à n'importe quel endroit de son trajet
       continuousPickupTitle: Indique si un usager peut monter à bord du véhicule à n'importe quel endroit le long du trajet du véhicule.
-      continuousServiceDefault: (Hérité de l'itinéraire)
+      continuousServiceDefault: (Hérité de la ligne)
       dropOffTitle: Définit la méthode de dépôt à cet arrêt.
       mustCoordinate: Doit se coordonner avec le conducteur (3)
       mustPhoneAgency: Doit téléphoner à l'agence (2)
@@ -972,7 +972,7 @@ components:
         brandingUrlRoot: URL de la marque
         carDropoffTime: Temps de dépôt de la voiture
         driveDistanceReluctance: Réticence à la distance de conduite
-        numItineraries: "Nombre d itinéraires"
+        numItineraries: "Nombre de lignes"
         requestLogFile: Demander le fichier des logs
         stairsReluctance: Réticence aux escaliers
         title: Configuration du routeur
@@ -1103,21 +1103,21 @@ components:
     isPublic: Est public
     labelEndDate: "%labelPrefix% Date fin"
     labelNumberIssues: "%labelPrefix% Nombre erreurs"
-    labelNumberRoutes: "%labelPrefix% Nombre itinéraires"
+    labelNumberRoutes: "%labelPrefix% Nombre lignes"
     labelNumberStops: "%labelPrefix% Nombre arrêts"
     labelNumberStopTimes: "%labelPrefix% Nombre temps d arrêts"
-    labelNumberTrips: "%labelPrefix% Nombre trajets"
+    labelNumberTrips: "%labelPrefix% Nombre services"
     labelStartDate: "%labelPrefix% Date départ"
     lastFetched: Dernière fois que les données ont été récupérées par l'URL
     lastUpdated: Dernière mise à jour
     latestValidation:
       endDate: "Dernière version: Date fin"
       errorCount: "Dernière version: Nombre erreurs"
-      routeCount: "Dernière version: Nombre itinérairess"
+      routeCount: "Dernière version: Nombre lignes"
       startDate: "Dernière version: Date départ"
       stopTimesCount: "Dernière version: Nombre temps d arrêts"
       stopCount: "Dernière version: Nombre d arrêts"
-      tripCount: "Dernière version: Nombre trajets"
+      tripCount: "Dernière version: Nombre services"
     makePublic: Publier les flux publics
     mergeFeeds: Tout fusionner
     name: Nom
@@ -1196,12 +1196,12 @@ components:
     problemType: Type de problème
   RouteLayout:
     errorOccurred: Une erreur est survenue lors de la récupération de la donnée.
-    jumpToRoute: Sélectionner un itinéraire
-    route: "Itinéraire:"
+    jumpToRoute: Sélectionner une ligne
+    route: "Ligne:"
     RouteRow:
-      patterns: "%num% circulations"
+      patterns: "%num% itinéraires"
       stops: "%num% arrêts"
-      trips: "%num% trajets"
+      trips: "%num% services"
   ScheduleExceptionForm:
     addDate: Ajouter une date
     customServiceID: ID du service personnalisé
@@ -1212,13 +1212,13 @@ components:
     noService: Pas de service
     onTheseDates: A ces dates*
     ranges: Plages
-    runFollowing: "Exécuter le calendrier suivant:"
+    runFollowing: ""
     selectCalendar: Sélectionner le calendrier à exécuter*
     selectCalendarToAdd: "Sélectionner les calendriers à ajouter (opt.):"
     selectCalendarToRemove: "Sélectionner les calendriers à supprimer (opt.):"
     selectExemplar: -- Sélectionner le type d'exception --
     swapAddOrRemove: Echanger, ajouter ou supprimer
-    thanksgivingDay: Thanksgiving
+    thanksgivingDay: Nom de l'exception
     unnamedDefault: "[sans nom]"
   SelectFileModal:
     ok: OK
@@ -1245,7 +1245,7 @@ components:
     noEC2Instances: Pas instances EC2 associées au serveur
   ShowAllRoutesOnMapFilter:
     fetching: Récupération
-    noShapes: Ce flux n'a aucun tracés d'itinéraire encore créé
+    noShapes: Ce flux n'a aucun tracé d'itinéraire
     showAllRoutesOnMap: Afficher les tracés
     tooManyShapeRecords: un fichier shapes.txt volumineux peut avoir un impact sur les performances
   Sidebar:
@@ -1310,15 +1310,15 @@ components:
     REQUESTING_GTFSEDITOR_SNAPSHOTS: Chargement des instantanés
     SAVING_AGENCY: Enregistrement de l'agence
     SAVING_STOP: Enregistrement de l'arrêt
-    SAVING_ROUTE: Enregistrement de l'itinéraire
+    SAVING_ROUTE: Enregistrement de la ligne
     REQUESTING_AGENCIES: Enregistrement des agences
     REQUESTING_STOPS: Enregistrement des arrêts
-    REQUESTING_ROUTES: Enregistrement des itinéraires
-    REQUESTING_TRIPS_FOR_CALENDAR: Enregistrement des trajets
+    REQUESTING_ROUTES: Enregistrement des lignes
+    REQUESTING_TRIPS_FOR_CALENDAR: Enregistrement des services
     CREATING_SNAPSHOT: Création d'un instantané
     DELETING_SNAPSHOT: Suppression d'un instantané
     DELETING_AGENCY: Suppression d'une agence
-    DELETING_TRIPS_FOR_CALENDAR: Suppression des trajets
+    DELETING_TRIPS_FOR_CALENDAR: Suppression des services
     RESTORING_SNAPSHOT: Restauration de l'instantané
     RENAMING_FEEDVERSION: Renommage de la version du flux
     LOADING_FEEDVERSION_FOR_EDITING: Chargement de la version dans l'utilisateur
@@ -1338,21 +1338,21 @@ components:
       body: Le reverouillage du flux est autorisé uniquement si une autre session d'édition est en cours pour vous (et non pour un autre utilisateur). Réessayez plus tard ou contactez l'éditeur actuel pour lui demander de terminer sa session.
       title: La tentative de prise en charge de l'édition a échoué !
   TimetableEditor:
-    choosePattern: Choisir une circulation
+    choosePattern: Choisir un itinéraire
     createNew: créer un nouveau
-    deleteSelectedTrip: "Êtes-vous sur de vouloir supprimer %count% trajet sélectionné?"
-    deleteSelectedTrips: "Êtes-vous sur de vouloir supprimer %count% trajets sélectionnés?"
-    deleteTrips: Suprimer les trajets
-    deleteTripsQuestion: Supprimer les trajets?
+    deleteSelectedTrip: "Êtes-vous sur de vouloir supprimer %count% service sélectionné?"
+    deleteSelectedTrips: "Êtes-vous sur de vouloir supprimer %count% services sélectionnés?"
+    deleteTrips: Suprimer les services
+    deleteTripsQuestion: Supprimer les services?
   TimetableHeader:
-    addBlankTrip: Ajouter un trajet vide
+    addBlankTrip: Ajouter un services vide
     advancedSettings: Paramètres avancés
-    backToRoute: Retour à l'itinéraire
+    backToRoute: Retour à la ligne
     calendarName: "Calendrier %truncatedCalendarName%"
     cellNumber: "Cellule %cellId%"
-    createTripSeries: Créer les séries de trajet
-    deleteTrips: Supprimer les trajets
-    duplicateTrips: Dupliquer les trajets
+    createTripSeries: Créer les séries de services
+    deleteTrips: Supprimer les services
+    duplicateTrips: Dupliquer les services
     frequencyEditor: Editeur de fréquences
     hideDepartureTimes: " Cacher les horaires de départ"
     hideDepartureTimesTooltip: "Le masquage des heures de départ permet de synchroniser les heures d'arrivée et de départ. ATTENTION : ne pas utiliser si les arrivées et les départs diffèrent."
@@ -1360,14 +1360,14 @@ components:
     patternsOn: "%truncatedPatternName% sur "
     saveChanges: Enregistrer les modifications
     selectCalendar: "[sélectionner un calendrier]"
-    selectPattern: "[sélectionner une circulation]"
+    selectPattern: "[sélectionner un itinéraire]"
     shiftClickToSubtract: Shift-clic pour soustraire
     showShortcuts: Afficher les raccourcis clavier
     timetableEditor: Editeur d'horaires
-    tripsFor: "trajets pour "
+    tripsFor: "services pour "
     undoChanges: Annuler les changements
     useSeconds: Utiliser les secondes pour le décalage
-    useSecondsToolTip: L'utilisation des secondes permet une plus grande précision dans les outils de décalage et de création des séries de trajets.
+    useSecondsToolTip: L'utilisation des secondes permet une plus grande précision dans les outils de décalage et de création des séries de services.
     validationIssues: Problèmes de validations
   TimetableHelpModal:
     close: Fermer
@@ -1376,8 +1376,8 @@ components:
       offset:
         title: Temps de décalage
         desc:
-          - Décalage des temps d'arrêt des trajets sélectionnés par l'ajout d'un temps
-          - Décalage des temps d'arrêt des trajets sélectionnés par le retrait d'un temps
+          - Décalage des temps d'arrêt des services sélectionnés par l'ajout d'un temps
+          - Décalage des temps d'arrêt des services sélectionnés par le retrait d'un temps
           - Décalage du temps de la seule cellule active par l'ajout d'un temps
           - Décalage du temps de la seule cellule active par le retrait d'un temps
           - Diminuer le temps de décalage d'une minute
@@ -1385,19 +1385,19 @@ components:
           - Augmenter le temps de décalage d'une minute
           - Augmenter le temps de décalage de 10 minutes
       navigate:
-        title: Naviguer et sélectionner des trajets
+        title: Naviguer et sélectionner des services
         desc:
-          - Précédent/prochain trajet
+          - Précédent/prochain service
           - Précédente/prochaine colonne
-          - Sélectionner un trajet
+          - Sélectionner un services
           - Sélectionner tout
           - Déselectionner tout
       modify:
-        title: Modifier les trajets
+        title: Modifier les services
         desc:
-          - Supprimer les trajets sélectionnés
-          - Nouveau trajet
-          - Cloner les trajets sélectionnés
+          - Supprimer les services sélectionnés
+          - Nouveau service
+          - Cloner les services sélectionnés
           - Copie de la valeur de la cellule adjacente (celle immédiatement à gauche)
           - Copier la valeur de la cellule directement au-dessus
     title: Raccourcis clavier de l'éditeur d'horaires
@@ -1416,24 +1416,24 @@ components:
     transformationsTitle: Transformations
   TripSeriesModal:
     alternateEvery: "Alterner tous les:"
-    automaticallyUpdateBlockIds: Attribuer automatiquement des ID de bloc aux trajets créés en série ?
-    automaticallyUpdateTripIds: Mettre à jour automatiquement les ID de trajets pour les trajets créés en série ?
+    automaticallyUpdateBlockIds: Attribuer automatiquement des ID de bloc aux services créés en série ?
+    automaticallyUpdateTripIds: Mettre à jour automatiquement les ID de services pour les services créés en série ?
     blockIdPrefixPlaceholder: Préfixe de l'ID du bloc
     blockIncrementPlaceholder: incrémenter par
     close: Fermer
-    createTripSeriesBody: Saisissez l'heure de début et de fin de la série de trajets (24 heures) et l'intervalle entre les trajets. Cliquez sur générer pour créer la série de trajets.
-    createTripSeriesQuestion: Créer une série de trajets
+    createTripSeriesBody: Saisissez l'heure de début et de fin de la série de services (24 heures) et l'intervalle entre les services. Cliquez sur générer pour créer la série de services.
+    createTripSeriesQuestion: Créer une série de services
     disabledTooltip: Il y a un problème avec la donnée en entrée
     endTime: "Heure de fin:"
     formatExplanation: "* Les ID de blocs seront formatés selon le nom suivant: {préfixe}-{nombre alterné}, par exemple 'JOUR-1', 'JOUR-2', etc.'"
-    generateTrips: Générer les trajets
+    generateTrips: Générer les services
     headway: "Avancée:"
     incrementAmountPlaceholder: Nombre d'incrémentation
     incrementBy: incrémenté par
     incrementStartPlaceholder: Début de l'incrémentation (0 par défaut)
-    prefixPlaceholder: Préfixe de l'ID de trajet (opt.)
+    prefixPlaceholder: Préfixe de l'ID de service (opt.)
     startTime: "Heure de départ:"
-    tripsStartingWith: "trajets, commençant par:"
+    tripsStartingWith: "services, commençant par:"
   UserAccount:
     account:
       title: Compte

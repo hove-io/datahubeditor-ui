@@ -231,7 +231,7 @@
 
 - id: route
   name: routes.txt
-  helpContent: Ce fichier contient des informations sur les itinéraires.
+  helpContent: Ce fichier contient des informations sur les lignes.
   fields:
   - name: status
     datatools: true
@@ -267,28 +267,28 @@
     required: true
     inputType: GTFS_ID
     columnWidth: 5
-    helpContent: Identifiant unique qui permet d'identifier un itinéraire.
+    helpContent: Identifiant unique qui permet d'identifier une ligne.
   - name: route_short_name
     required: true
     inputType: TEXT
     columnWidth: 7
-    helpContent: Contient le nom raccourci de l'itinéraire, généralement le nom commun donné par les usagers (31, L10, B, ...).
+    helpContent: Contient le nom raccourci de la ligne, généralement le nom commun donné par les usagers (31, L10, B, ...).
   - name: route_long_name
     required: true
     inputType: TEXT
     columnWidth: 12
-    helpContent: Contient le nom complet de l'itinéraire.
+    helpContent: Contient le nom complet de la ligne.
   - name: agency_id
     required: false
     inputType: GTFS_AGENCY
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: Définit l'agence opérant l'itinéraire.
+    helpContent: Définit l'agence opérant la ligne.
   - name: route_desc
     required: false
     inputType: TEXT
     columnWidth: 12
-    helpContent: Contient une description de l'itinéraire.
+    helpContent: Contient une description de la ligne.
   - name: route_type
     required: true
     inputType: GTFS_ROUTE_TYPE
@@ -461,7 +461,7 @@
     - value: 1702
       text: Horse-drawn Carriage
     columnWidth: 12
-    helpContent: Décrit le mode de transport de l'itinéraire.
+    helpContent: Décrit le mode de transport de la ligne.
   - name: route_sort_order
     required: false
     inputType: POSITIVE_INT
@@ -476,14 +476,14 @@
     inputType: URL
     placeholder: https://agence.fr/itineraire/31
     columnWidth: 12
-    helpContent: Contient l'URL d'une page d'information d'un itinéraire spécifique.
+    helpContent: Contient l'URL d'une page d'information d'une ligne spécifique.
   - name: route_color
     required: false
     inputType: COLOR
     placeholder: 'FF0000'
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: Définit une couleur correspondant à l'itinéraire.
+    helpContent: Définit une couleur correspondant à la ligne.
   - name: route_text_color
     required: false
     inputType: DROPDOWN
@@ -497,11 +497,11 @@
     helpContent: Définit une couleur utilisé pour écrire du texte sur un fond correspondant à route_color.
   - name: wheelchair_accessible
     required: false
-    displayName: Est-ce que l'itinéraire est accessible aux UFR ?
+    displayName: Est-ce que la ligne est accessible aux UFR ?
     inputType: DROPDOWN
     bulkEditEnabled: true
     columnWidth: 12
-    helpContent: Indique si les véhicules opérant sur cette route sont accessibles aux UFR.
+    helpContent: Indique si les véhicules opérant sur cette ligne sont accessibles aux UFR.
     options:
       - value: 0
         text: Pas d'informations (0)
@@ -514,35 +514,35 @@
 
 - id: trip
   name: trips.txt
-  helpContent: "Trajets pour chaque itineraire. Un trajet est une séquence d'au moins deux arrêts."
+  helpContent: "Services pour chaque itineraire. Un service est une séquence d'au moins deux arrêts."
   fields:
   - name: "route_id"
     required: true
     inputType: GTFS_ROUTE
     columnWidth: 6
-    helpContent: "Identifiant unique qui permet d'identifier un itinéraire."
+    helpContent: "Identifiant unique qui permet d'identifier une ligne."
   - name: "service_id"
     required: true
     inputType: GTFS_SERVICE
     columnWidth: 6
-    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le trajet est en service."
+    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le service est en service."
   - name: "trip_id"
     required: true
     inputType: GTFS_ID
     columnWidth: 6
-    helpContent: "Identifiant unique qui permet d'identifier un trajet."
+    helpContent: "Identifiant unique qui permet d'identifier un service."
   - name: "trip_headsign"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "Girouette du véhicule, généralement l'arrêt Terminus du trajet."
+    helpContent: "Girouette du véhicule, généralement l'arrêt Terminus du service."
   - name: "trip_short_name"
     required: false
     inputType: TEXT
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "Nom apparaissant sur les calendriers et les indications à bord. Permet à l'usager d'identifier le trajet."
+    helpContent: "Nom apparaissant sur les calendriers et les indications à bord. Permet à l'usager d'identifier le service."
   - name: "direction_id"
     required: false
     inputType: DROPDOWN
@@ -551,18 +551,18 @@
     - value: '0'
     - value: '1'
     columnWidth: 6
-    helpContent: "Permet d'identifier si le sens du trajet est aller ou retour."
+    helpContent: "Permet d'identifier si le sens du service est aller ou retour."
   - name: "block_id"
     required: false
     inputType: GTFS_BLOCK
     bulkEditEnabled: true
     columnWidth: 6
-    helpContent: "Permet de définir à quel bloc appartient le trajet."
+    helpContent: "Permet de définir à quel bloc appartient le service."
   - name: "shape_id"
     required: false
     inputType: GTFS_SHAPE
     columnWidth: 6
-    helpContent: "Permet de définir un tracé de circulation associé au trajet"
+    helpContent: "Permet de définir un tracé d'itinéraire' associé au service"
   - name: "wheelchair_accessible"
     required: false
     inputType: DROPDOWN
@@ -593,7 +593,7 @@
     required: true
     inputType: GTFS_TRIP
     columnWidth: 6
-    helpContent: "Identifiant unique qui permet d'identifier un trajet."
+    helpContent: "Identifiant unique qui permet d'identifier un service."
   - name: "arrival_time"
     required: true
     inputType: TIME
@@ -613,7 +613,7 @@
     required: true
     inputType: POSITIVE_INT
     columnWidth: 6
-    helpContent: "Identifie l'ordonnancement des arrêts pour un trajet particulier."
+    helpContent: "Identifie l'ordonnancement des arrêts pour un service particulier."
   - name: "stop_headsign"
     required: false
     inputType: TEXT
@@ -666,7 +666,7 @@
     required: true
     inputType: GTFS_ID
     columnWidth: 6
-    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le trajet est en service."
+    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le service est en service."
   - name: "description"
     required: false
     datatools: true
@@ -759,7 +759,7 @@
     required: true
     inputType: GTFS_SERVICE
     columnWidth: 6
-    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le trajet est en service."
+    helpContent: "Identifiant unique qui permet d'identifier un intervalle de dates durant lequel le service est en service."
   - name: "date"
     required: true
     inputType: DATE
